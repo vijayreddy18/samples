@@ -1,8 +1,11 @@
 pipeline {
-    agent {label 'slave'}
-	
+    agent any
+    
     stages {
-	
-		stage ('CONFIGURE APPLICATION SOURCE CODE'){
-			steps{
-         dotnet build .sln*
+        stage('CONFIGURE APPLICATION SOURCE CODE') {
+            steps {
+                sh 'dotnet build .sln'
+            }
+        }
+    }
+}
